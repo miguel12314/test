@@ -1,12 +1,13 @@
 (function(){
 	"use strict";
 	//Index
-	angular.module("app")
+	angular.module("app",['firebase'])
 	.controller('test',test);
 	//funcion principal del index
-	function test(){
+	function test($firebase){
 		var vm=this;
-
+		var template= new Firebase('https://test-1ab46.firebaseio.com/Template')
+		var fb=$firebase(template)
 		//Colores
 		this.color=[{
 				label:"Rojo",
